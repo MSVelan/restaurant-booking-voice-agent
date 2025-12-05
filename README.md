@@ -1,3 +1,40 @@
+## Overview and highlights
+
+This is the backend repository for restaurant voice agent.
+
+Tech Stack:
+Frontend + Routes: NextJS
+Backend: Livekit, Langchain, Python
+DB: MongoDB Atlas cluster
+TTS model: deepgram aura-asteria-en
+STT model: deepgram flux-general-en
+LLM model: Cerebras llama-3.3-70b
+Weather-api and seat preference: Openweathermap, Groq llama-3.3-70b-versatile LLM
+
+Architecture Diagram:
+
+![System Design](/assets/system-design.png)
+
+### Highlights
+- Supports natural language processing for date and time input (uses dateparser)
+- Uses openweathermap api and langchain llm output to suggest seat preference
+- Supports multilingual turn detection and VAD using silero
+
+## Requirements
+
+Build an intelligent voice agent that helps users book restaurant tables through natural
+conversation. The agent should be able to:
+
+1. Greet the user and understand their booking intent
+2. Collect booking information through voice:
+    - Number of guests
+    - Preferred date and time
+    - Cuisine preference (Italian, Chinese, Indian, etc.)
+    - Special requests (birthday, anniversary, dietary restrictions)
+3. Fetch real-time weather for the booking date and suggest indoor/outdoor seating
+4. Confirm booking details via voice
+5. Store booking in a database
+
 ## Dev Setup
 
 1. Clone the repository and install dependencies to a virtual environment:
